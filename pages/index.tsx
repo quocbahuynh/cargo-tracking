@@ -73,7 +73,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='wrapper h-full overflow-auto'>
         <div className='header bg-blue-600 h-48 px-3 text-white pt-6'>
-          <h1 className="text-3xl font-bold mb-2">Cargo Tracking</h1>
+          <h1 className="text-4xl font-bold mb-2">Cargo Tracking</h1>
           <p className="text-base font-semibold mb-6">{currentTime().stringTime}</p>
           <SearcBar handleSearch={showOptionModal} searchValue={searchValue} onChangeSearch={onChangeSearch} />
         </div>
