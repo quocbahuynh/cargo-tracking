@@ -20,7 +20,7 @@ export const pushHistory = (num: string): void => {
         createHistory();
     }
 
-    const historyList = JSON.parse(localStorage.getItem(keyLocalHistory));
+    const historyList = JSON.parse(localStorage.getItem(keyLocalHistory) || "{}");
     const historyFilter = historyList.filter((item: any) => item.container_num !== num)
     const newItem = {
         container_num: num,
@@ -33,7 +33,7 @@ export const pushHistory = (num: string): void => {
 
 export const removeHistory = (num: string): void => {
     if (isExsitHistory()) {
-        const historyList = JSON.parse(localStorage.getItem(keyLocalHistory));
+        const historyList = JSON.parse(localStorage.getItem(keyLocalHistory) || "{}");
         const historyFilter = historyList.filter((item: any) => item.container_num !== num)
         const newHistory = [...historyFilter]
         localStorage.setItem(keyLocalHistory, JSON.stringify(newHistory))

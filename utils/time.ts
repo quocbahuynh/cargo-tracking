@@ -18,7 +18,12 @@ const convertDayOfWeek = (day: number): number | string => {
     return convertDayOfWeek;
 }
 
-export const currentTime = (): object => {
+interface CurrentTimeInterface{
+ stringTime: string;
+ numberTime: string;
+}
+
+export const currentTime = (): CurrentTimeInterface => {
     const dayOfWeek = moment().day();
     const dayOfMonth = moment().date();
     const month = moment().month() + 1;
