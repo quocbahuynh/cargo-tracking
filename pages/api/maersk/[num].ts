@@ -1,15 +1,9 @@
-import axios from 'axios'
-import { json } from 'body-parser'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { apiLinks, httpClient } from '../../../utils'
 
-// type Data = {
-//     name: string
-// }
-
 const requestMaersk = async (
     req: NextApiRequest,
-    res: NextApiResponse
+    res: NextApiResponse<object>
 ) => {
     const { num } = req.query;
 

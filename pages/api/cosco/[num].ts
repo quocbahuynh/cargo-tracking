@@ -1,13 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { apiLinks, httpClient } from '../../../utils'
 
-// type Data = {
-//     name: string
-// }
-
 const requestCosco = async (
     req: NextApiRequest,
-    res: NextApiResponse
+    res: NextApiResponse<object>
 ) => {
     const { num } = req.query;
 
