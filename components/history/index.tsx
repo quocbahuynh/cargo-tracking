@@ -16,13 +16,13 @@ export const History: FC = () => {
         if (!isExsitHistory()) {
             createHistory();
         }
-        const getHistory = JSON.parse(localStorage.getItem(keyLocalHistory))
+        const getHistory = JSON.parse(localStorage.getItem(keyLocalHistory) || '{}')
         setData(getHistory)
     }, [setData,])
 
     const removeHistory = (num: string): void => {
         if (isExsitHistory()) {
-            const historyList = JSON.parse(localStorage.getItem(keyLocalHistory));
+            const historyList = JSON.parse(localStorage.getItem(keyLocalHistory) || '{}');
             const historyFilter = historyList.filter((item: any) => item.container_num !== num)
             const newHistory = [...historyFilter]
             localStorage.setItem(keyLocalHistory, JSON.stringify(newHistory))
